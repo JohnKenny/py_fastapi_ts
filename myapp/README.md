@@ -6,9 +6,12 @@ curl -X POST http://127.0.0.1:5050/hello-world-post
 uvicorn main:app --port 5050 --reload
 
 # sending post request
-curl -X POST http://127.0.0.1:5050/hello-world-post -H "Content-Type: application/json" -d '{
-    "name": "Juan",
-    "math_score": 76,
-    "english_score": 91
+curl -X POST "http://127.0.0.1:5050//submit-score" -H "Content-Type: application/json" -d 
+'{
+    "name": "John",
+    "math_score": 66,
+    "english_score": 79
+
 }'
+    
 

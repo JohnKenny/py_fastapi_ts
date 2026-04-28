@@ -16,5 +16,5 @@ def hello():
     return{"Mensaje": "Ola mundo"}
 
 @app.post("/submit-score")
-def submit_score():
+def submit_score(score: Score):
     return{"Message":"posted to, gual"}
