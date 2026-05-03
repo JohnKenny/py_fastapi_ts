@@ -1,20 +1,15 @@
 """App entrypoint"""
 
 from fastapi import FastAPI
-from pydantic import BaseModel
+from routes.submit_scores import router
 
-class Score(BaseModel):
-    """Model representing a score"""
-    name: str
-    math_score: int
-    english_score: int
+def create_app() -> FastAPI:
+    app = FastAPI(title="My fast API", description="this is my API")
+    app.include_router(router)
+    return app
 
-app = FastAPI(title="My fast API", description="this is my API")
+app = create_app()
 
-@app.get("/hello-world")
-def hello():
-    return{"Mensaje": "Ola mundo"}
 
-@app.post("/submit-score")
-def submit_score(score: Score):
-    return{"Message":"posted to, gual"}
+
+
