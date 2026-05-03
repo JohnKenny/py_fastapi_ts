@@ -13,5 +13,7 @@ curl -X POST "http://127.0.0.1:5050//submit-score" -H "Content-Type: application
     "english_score": 99
 
 }'
+
+# Todo: create get route
     
 
