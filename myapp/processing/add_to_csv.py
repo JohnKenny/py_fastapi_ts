@@ -2,7 +2,7 @@
 import os
 import pandas as pd
 
-def add_student_score(name, math_score, english_score):
+def add_student_score(name: str, math_score: int, english_score: int):
 
     new_data  = {
         'name': [name],

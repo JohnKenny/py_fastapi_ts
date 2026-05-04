@@ -14,6 +14,7 @@ class Score(BaseModel):
 
 @router.post("/submit-score")
 def submit_score(score: Score):
+    add_student_score(score.name, score.math_score, score.english_score)
     return{"Message": f"Gual, gracias {score.name}"}
 
 # @router.get("/hello-world")
