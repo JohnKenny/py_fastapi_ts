@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from processing.add_to_csv import add_student_score
 
@@ -14,7 +14,11 @@ class Score(BaseModel):
 
 @router.post("/submit-score")
 def submit_score(score: Score):
-    add_student_score(score.name, score.math_score, score.english_score)
+    try:
+        add_student_score(score.name, score.math_score, score.english_score)
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"Error occured: {exc}")
+        
     return{"Message": f"Gual, gracias {score.name}"}
 
 # @router.get("/hello-world")
