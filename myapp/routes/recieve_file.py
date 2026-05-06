@@ -8,7 +8,7 @@ router = APIRouter()
 async def post_file(file: UploadFile = File(...)): 
     """Endpoint to recieve a file"""
     contents = await file.read()
-    return JSONResponse(content={"filename": file.filename})
+    return JSONResponse(content={"filename": file.filename, "Contents:": str(contents)})
     
     # print(f"contents: {contents}")
     # return 200
