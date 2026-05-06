@@ -17,6 +17,7 @@ curl -X POST "http://127.0.0.1:5050//submit-score" -H "Content-Type: application
 # Todo: create get route
 
 # sending a post-to-file api request
-curl -X POST http://127.0.0.1:5050/submit-score -F "file=@myfile.txt"
+curl -X POST http://127.0.0.1:5050/post-file -F "file=@myfile.txt"
+C:\Users\j_k_3\py_fastapi_ts\myapp\myfile.txt
     
 

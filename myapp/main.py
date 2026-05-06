@@ -1,11 +1,14 @@
 """App entrypoint"""
 
 from fastapi import FastAPI
-from routes.submit_scores import scores_router
+from routes.submit_scores import router as scores_router
+from routes.recieve_file import router as file_router
+
 
 def create_app() -> FastAPI:
     app = FastAPI(title="My fast API", description="this is my API")
     app.include_router(scores_router)
+    app.include_router(file_router)
     return app
 
 app = create_app()
